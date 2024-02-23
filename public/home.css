@@ -1,0 +1,143 @@
+#home {
+    background: #09090b;
+    color: white;
+    min-height: 100vh;
+    padding-bottom: 120px;
+}
+
+nav {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+    padding: 0px 100px;
+}
+
+.nick {
+    background: rgb(24, 24, 27);
+    color: #71717a;
+    display: flex;
+    align-items: center;
+    gap: 12.5px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.nick i {
+    color: white;
+    font-size: 22.5px;
+}
+
+.logout {
+    color: white;
+    display: flex;
+    font-size: 23px;
+}
+
+.games {
+    color: white;
+    margin: auto;
+    width: fit-content;
+    padding: 50px 100px;
+}
+
+.games h2 {
+    width: fit-content;
+    margin-bottom: 35px;
+    font-size: 20px;
+}
+
+.swiper-slide {
+    max-width: 220px;
+    font-size: 15px;
+}
+
+.swiper-slide a {
+    color: white;
+}
+
+.g-banner {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    max-width: 220px;
+}
+
+.g-banner::before {
+    background: rgb(0, 0, 0, 0.5);
+    content: "";
+    position: absolute;
+    opacity: 0;
+    transition: 0.2s;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.g-banner img {
+    width: 100%;
+    transition: 0.2s;
+}
+
+.g-title {
+    margin-top: 20px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.g-devs {
+    color: grey;
+}
+
+.g-title, .g-devs {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    -webkit-line-clamp: 1;
+}
+
+.swiper-slide:hover img {
+    transform: scale(1.1);
+}
+
+.swiper-slide:hover .g-banner::before {
+    opacity: 1;
+}
+
+@media(max-width: 1000px) {
+    nav {
+        padding: 0px 80px;
+    }
+
+    .games {
+        width: initial;
+        padding: 50px 80px;
+    }
+}
+
+@media(max-width: 700px) {
+    nav {
+        padding: 0px 50px;
+    }
+
+    .games {
+        width: initial;
+        padding: 50px 50px;
+    }
+}
+
+@media(max-width: 400px) {
+    nav {
+        padding: 0px 45px;
+    }
+
+    .games {
+        width: initial;
+        padding: 50px 45px;
+    }
+}

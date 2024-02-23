@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+#form {
+    background: #09090b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 100px 50px;
+}
+
+.signin-form {
+    background: #18181b;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 40px;
+    border-radius: 10px;
+    width: 500px;
+}
+
+.signin-form h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.signin-form input, button {
+    background: #27272a;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 18px;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.signin-form button {
+    background: blue;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.signin-form button i {
+    color: white;
+    font-size: 22.5px;
+}
+
+.signin-form input:hover {
+    background: #3f3f46;
+}
+
+.signin-form button:hover {
+    background: mediumblue;
+}
+
+.signin-form p {
+    color: #52525b;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.5em;
+}
+
+.signin-form p a {
+    color: #2563eb;
+}

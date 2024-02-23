@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Application | <%= game.title %></title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/reviews.css">
+        
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section id="reviews">
+        <form action="/reviews/<%= game._id %>" method="POST" class="review-form">
+            <textarea name="review" placeholder="Add your review" required></textarea>
+            <button type="submit">
+                <i class='bx bxs-plus-circle'></i>
+                <span>Add review</span>
+            </button>
+        </form>
+        <div class="review-list">
+            <% game.reviews.forEach(function(review) { %>
+                <div class="review">
+                    <div>
+                        <p class="username"><%= review.username %></p>
+                        <p class="r-text"><%= review.review %></p>
+                        <form action="/reviews/<%= game._id %>/delete" method="POST">
+                            <input type="hidden" name="reviewId" value="<%= review._id %>">
+                            <button type="submit">
+                                <span>Delete review</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            <% }); %>          
+        </div>
+    </section>
+</body>
+</html>

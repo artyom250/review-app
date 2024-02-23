@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Application | Homepage</title>
+    
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/home.css">
+    
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section id="home">
+        <nav>
+            <div class="nick">
+                <i class='bx bx-user-circle'></i>
+                <p><%= username %></p>
+            </div>
+            <a href="/logout" class="logout"><i class='bx bx-log-out'></i></a>
+        </nav>
+
+        <!-- Showcase games -->
+        <div class="games">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <% games.forEach(function(game) { %>
+                        <% if (game.type === "showcase") { %>
+                            <div class="swiper-slide">
+                                <a href="/reviews/<%= game._id %>">
+                                    <div class="g-banner">
+                                        <img src="<%= game.banner %>" alt="showcase">
+                                    </div>
+                                    <p class="g-title"><%= game.title %></p>
+                                    <p class="g-devs"><%= game.devs %></p>
+                                </a>
+                            </div>
+                        <% } %>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recommended games -->
+        <div class="games">
+            <h2>Recommended</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <% games.forEach(function(game) { %>
+                        <% if (game.type === "recommended") { %>
+                            <div class="swiper-slide">
+                                <a href="/reviews/<%= game._id %>">
+                                    <div class="g-banner">
+                                        <img src="<%= game.banner %>" alt="showcase">
+                                    </div>
+                                    <p class="g-title"><%= game.title %></p>
+                                    <p class="g-devs"><%= game.devs %></p>
+                                </a>
+                            </div>
+                        <% } %>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fresh Releases games -->
+        <div class="games">
+            <h2>Fresh releases</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <% games.forEach(function(game) { %>
+                        <% if (game.type === "fresh") { %>
+                            <div class="swiper-slide">
+                                <a href="/reviews/<%= game._id %>">
+                                    <div class="g-banner">
+                                        <img src="<%= game.banner %>" alt="showcase">
+                                    </div>
+                                    <p class="g-title"><%= game.title %></p>
+                                    <p class="g-devs"><%= game.devs %></p>
+                                </a>
+                            </div>
+                        <% } %>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            spaceBetween: 20,
+            grabCursor: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 0,
+                modifier: 0,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    </script>
+</body>
+</html>
